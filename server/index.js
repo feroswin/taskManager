@@ -1,12 +1,23 @@
 import express from "express"
 import {router as authRouter} from "./routers/auth.router.js";
 import {connection} from "./db.js"
+import bodyParser from "body-parser";
+import dotenv from "dotenv"
+import {router as taskRouter} from "./routers/task.router.js";
+
+
+dotenv.config()
 
 let app = express()
 
 let PORT = process.env.PORT || 80
 
-app.use("/", authRouter);
+app.use(bodyParser.json())
+
+app.use("/auth", authRouter);
+app.use("/tasks", taskRouter)
+
+
 
 app.listen(PORT, () => {
     try {

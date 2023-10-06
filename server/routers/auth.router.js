@@ -3,10 +3,8 @@ import AuthController from "../controllers/auth.controller.js";
 
 export const router = express.Router()
 
-router.get("/login", AuthController.login)
+router.post("/login", AuthController.login)
 
-router.post("/register", (req, res) => {
-
-})
+router.post("/register", AuthController.register)
 
 

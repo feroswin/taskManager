@@ -9,17 +9,17 @@ export default function (req, res, next) {
         if(!token)
             return res.status(401).json({
                 response: false,
-                description: "Пользователь не авторизован"
+                message: "Пользователь не авторизован"
             })
 
         const decodeData = jwt.verify(token, process.env.SECRET_KEY)
-        req.username = decodeData
+        req.user = decodeData
         next()
     }
     catch (e) {
         return res.status(401).json({
             response: false,
-            description: e.message
+            message: e.message
         })
     }
 

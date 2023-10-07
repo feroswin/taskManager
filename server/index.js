@@ -14,7 +14,7 @@ let PORT = process.env.PORT || 80
 
 app.use(bodyParser.json())
 
-app.use("/auth", authRouter);
+app.use("/auth", authRouter)
 app.use("/tasks", taskRouter)
 
 

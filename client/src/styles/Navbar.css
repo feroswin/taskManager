@@ -1,0 +1,46 @@
+
+
+nav {
+    background: white;
+}
+
+.inner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.app-name {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    column-gap: 25px;
+}
+
+.navbar-link {
+    color: black;
+    font-size: 18px;
+    /*font-weight: 500;*/
+    text-decoration: none;
+    padding: 5px 20px;
+    transition: background-color .2s ease-in-out;
+}
+
+.navbar-link:hover {
+    background-color: var(--blue-100);
+    border-radius: 6px;
+}
+
+.btn-auth {
+    font-size: 18px;
+    background: var(--blue);
+    padding: 5px 15px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}

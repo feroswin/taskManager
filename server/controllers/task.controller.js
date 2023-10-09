@@ -6,7 +6,7 @@ class TaskController {
     async getTasks (req, res) {
         try {
             const {id_user} = req.user
-            // console.log(req.user)
+            // console.log(req.slices)
             const [data] = await connection.query(`select id_task as id, title, description, created_at, is_complete, deadline from task inner join user on user.id_user = task.id_user where user.id_user = ?`, [id_user])
 
             if (!data.length)

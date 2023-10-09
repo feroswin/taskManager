@@ -6,8 +6,8 @@ export default function (req, res, next) {
         // console.log(req.headers.authorization)
         const token = req.headers.authorization?.split(' ')[1]
 
-        if(!token)
-            return res.status(401).json({
+        if(token === "null")
+            return res.json({
                 response: false,
                 message: "Пользователь не авторизован"
             })
@@ -17,7 +17,7 @@ export default function (req, res, next) {
         next()
     }
     catch (e) {
-        return res.status(401).json({
+        return res.json({
             response: false,
             message: e.message
         })

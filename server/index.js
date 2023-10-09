@@ -4,7 +4,7 @@ import {connection} from "./db.js"
 import bodyParser from "body-parser";
 import dotenv from "dotenv"
 import {router as taskRouter} from "./routers/task.router.js";
-
+import cors from "cors"
 
 dotenv.config()
 
@@ -12,6 +12,7 @@ let app = express()
 
 let PORT = process.env.PORT || 80
 
+app.use(cors())
 app.use(bodyParser.json())
 
 app.use("/auth", authRouter)

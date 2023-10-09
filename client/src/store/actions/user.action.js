@@ -1,6 +1,5 @@
 import instanceAxios from "../../axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {redirect} from "react-router-dom";
 
 export const loginUser = createAsyncThunk(
     "auth/login",

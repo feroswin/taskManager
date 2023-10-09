@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Input from "../generic/Input";
 import Button from "../generic/Button";
-import {Link, redirect, useNavigate} from "react-router-dom";
+import {Link, redirect, useBeforeUnload, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {loginUser} from "../store/actions/user.action";
 

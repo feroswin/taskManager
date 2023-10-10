@@ -1,5 +1,6 @@
 import {connection} from "../db.js";
 import {getFormatDate} from "../helpers/formatDate.js";
+import * as readline from "readline";
 
 class TaskController {
 
@@ -50,7 +51,7 @@ class TaskController {
                  })
             const sql = "insert into task (id_user, title, description, created_at, deadline) values(?, ?, ?, ?, ?)"
 
-            const result = await connection.query(sql, [req.user.id_user, title, description, getFormatDate(), deadline])
+            const result = await connection.query(sql, [req.user.id_user, title, description, getFormatDate(new Date()), deadline])
             // console.log(result)
 
             return res.json({
@@ -97,15 +98,8 @@ class TaskController {
             const {title, description, deadline, is_complete} = req.body
             const idTask = req.params.id
             const idUser = req.user.id_user
-            const updateFields = []
-            const queryParams = []
-
-            description && (updateFields.push('description = ?'), queryParams.push(description));
-            deadline && (updateFields.push('deadline = ?'), queryParams.push(deadline));
-            is_complete && (updateFields.push('is_complete = ?'), queryParams.push(Number(Boolean(is_complete))));
-
-            const [result] = await connection.query(`update task set title = ? ${updateFields.join(",")} where id_task = ? and id_user = ?`, [title, ...queryParams, idTask, idUser])
-            console.log(result)
+            const [result] = await connection.query(`update task set title = ?, description = ?, deadline = ?,  is_complete = ? where id_task = ? and id_user = ?`, [title, description, ((!deadline) ? null: deadline), is_complete, idTask, idUser])
+            // console.log(result)
             if (!result.changedRows)
                 return res.json({
                     response: false,
@@ -123,6 +117,32 @@ class TaskController {
                 message: e
             })
         }
+    }
+
+    async getOneTask(req, res) {
+        try {
+            const idTask = req.params.id
+            const idUser = req.user.id_user
+            const [result] = await connection.query("select title, description, created_at, DATE_FORMAT(deadline, '%Y-%m-%d') as deadline, is_complete from task where id_user = ? and id_task = ?", [idUser, idTask])
+            if (!result.length) {
+                return res.json({
+                    response: false,
+                    message: "Задача с таким id не найдена"
+                })
+            }
+            return res.json({
+                response: true,
+                data: {
+                    ...result[0],
+                    is_complete: Boolean(result[0].is_complete)
+                }
+            })
+        }
+        catch (e) {
+
+        }
+
+
     }
 }
 

@@ -230,6 +230,285 @@ body {
     color: var(--blue);
 }
 
+
+.general-title {
+    margin-top: 150px;
+    font-size: 35px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    color: blue;
+}
+
+
+
+nav {
+    background: white;
+}
+
+.inner-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.app-name {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    column-gap: 25px;
+}
+
+.navbar-link {
+    color: black;
+    font-size: 18px;
+    /*font-weight: 500;*/
+    text-decoration: none;
+    padding: 5px 20px;
+    transition: background-color .2s ease-in-out;
+}
+
+.navbar-link:hover {
+    background-color: var(--blue-100);
+    border-radius: 6px;
+}
+
+.btn-auth {
+    font-size: 18px;
+    background: var(--blue);
+    padding: 5px 15px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.task {
+    display: flex;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    column-gap: 25px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content-task {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.title-task {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.description-task {
+    font-size: 14px;
+}
+
+.inner-task {
+    width: 70%;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.date-create {
+    font-size: 12px;
+    font-weight: 600;
+    color: #a1a1a1;
+}
+
+.wrapper-account {
+    margin-top: 50px;
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wrapper-tasks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-top: 25px;
+}
+
+.wrapper-manage-task {
+    width: 30%;
+    justify-content: flex-end;
+    display: flex;
+    column-gap: 25px;
+    align-items: flex-start;
+}
+
+.manage-task {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 15px;
+}
+
+.btn-add-task {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper-edit-task {
+    padding: 25px 0;
+}
+
+.title-edit {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.wrapper-input {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+}
+
+.input-full-container {
+    width: 100%;
+}
+
+.date-input {
+    width: 200px;
+}
+
+.btn-fit-content {
+    width: fit-content;
+}
+
+.wrapper-input.checkbox {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.checkbox-wrapper-5 .check {
+    --size: 25px;
+    position: relative;
+    background: linear-gradient(90deg, #f19af3, #f099b5);
+    line-height: 0;
+    perspective: 400px;
+    font-size: var(--size);
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"],
+.checkbox-wrapper-5 .check label,
+.checkbox-wrapper-5 .check label::before,
+.checkbox-wrapper-5 .check label::after,
+.checkbox-wrapper-5 .check {
+    appearance: none;
+    display: inline-block;
+    border-radius: var(--size);
+    border: 0;
+    transition: .35s ease-in-out;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.checkbox-wrapper-5 .check label {
+    width: calc(2.2 * var(--size));
+    height: var(--size);
+    background: #d7d7d7;
+    overflow: hidden;
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"] {
+    position: absolute;
+    z-index: 1;
+    width: calc(.8 * var(--size));
+    height: calc(.8 * var(--size));
+    top: calc(.1 * var(--size));
+    left: calc(.1 * var(--size));
+    background: linear-gradient(45deg, #dedede, #ffffff);
+    box-shadow: 0 6px 7px rgba(0,0,0,0.3);
+    outline: none;
+    margin: 0;
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked {
+    left: calc(1.3 * var(--size));
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label {
+    background: transparent;
+}
+
+.checkbox-wrapper-5 .check label::before,
+.checkbox-wrapper-5 .check label::after {
+    content: "· ·";
+    position: absolute;
+    overflow: hidden;
+    left: calc(.15 * var(--size));
+    top: calc(.5 * var(--size));
+    height: var(--size);
+    letter-spacing: calc(-0.04 * var(--size));
+    color: #9b9b9b;
+    font-family: "Times New Roman", serif;
+    z-index: 2;
+    font-size: calc(.6 * var(--size));
+    border-radius: 0;
+    transform-origin: 0 0 calc(-0.5 * var(--size));
+    backface-visibility: hidden;
+}
+
+.checkbox-wrapper-5 .check label::after {
+    content: "●";
+    top: calc(.65 * var(--size));
+    left: calc(.2 * var(--size));
+    height: calc(.1 * var(--size));
+    width: calc(.35 * var(--size));
+    font-size: calc(.2 * var(--size));
+    transform-origin: 0 0 calc(-0.4 * var(--size));
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::before,
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+    left: calc(1.55 * var(--size));
+    top: calc(.4 * var(--size));
+    line-height: calc(.1 * var(--size));
+    transform: rotateY(360deg);
+}
+
+.checkbox-wrapper-5 .check input[type="checkbox"]:checked + label::after {
+    height: calc(.16 * var(--size));
+    top: calc(.55 * var(--size));
+    left: calc(1.6 * var(--size));
+    font-size: calc(.6 * var(--size));
+    line-height: 0;
+}
+
+.btn-submit-edit-task {
+    margin-top: 20px;
+}
+
+
+
+
+
 @media (max-width: 1399.98px) {
     .container {
         width: 1200px;

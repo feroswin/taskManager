@@ -1,5 +1,4 @@
 import React from 'react';
-import "../styles/general-page.css"
 
 function GeneralPage(props) {
     return (

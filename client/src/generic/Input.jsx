@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react';
 
-const Input = ({type, placeholder = '', value = '', onChange = null}) => {
+const Input = ({type, placeholder = '', value = '', onChange = "", className}) => {
     return (
         <Fragment>
-            <input type={type} placeholder={placeholder} value={value} onChange={onChange} className="input"/>
+            <input type={type} placeholder={placeholder} value={value} onChange={onChange} className={className}/>
         </Fragment>
     );
 };

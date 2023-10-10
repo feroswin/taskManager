@@ -28,9 +28,9 @@ const LoginPage = () => {
     return (
         <form className="form-auth">
             <div className="title-form-auth">Авторизация</div>
-            <Input type="text" placeholder="Введите никнейм" value={username} onChange={e => setUsername(e.target.value)}/>
-            <Input type="password" placeholder="Введите пароль" value={password} onChange={e => setPassword(e.target.value)}/>
-            <Button onClick={submitData}>Авторизоваться</Button>
+            <Input className="input" type="text" placeholder="Введите никнейм" value={username} onChange={e => setUsername(e.target.value)}/>
+            <Input className="input" type="password" placeholder="Введите пароль" value={password} onChange={e => setPassword(e.target.value)}/>
+            <Button className="btn" onClick={submitData}>Авторизоваться</Button>
             {!response && <div className={`message error`}>{message}</div>}
             <Link to="/register" className="link-redirect">Нет аккаунта? Зарегистируйтесь</Link>
         </form>

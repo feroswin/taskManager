@@ -6,6 +6,8 @@ import CabinetPage from "./pages/CabinetPage";
 import Navbar from "./components/Navbar";
 import Container from "./components/Container";
 import "./styles/index.css"
+import EditTaskPage from "./pages/EditTaskPage";
+import AddTaskPage from "./pages/AddTaskPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
                     <Route path="/register" element={<RegisterPage/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/cabinet" element={<CabinetPage/>}/>
+                    <Route path="/edit-task/:id" element={<EditTaskPage/>}/>
+                    <Route path="/add-task" element={<AddTaskPage/>}/>
                 </Routes>
             </Container>
         </BrowserRouter>

@@ -1,6 +1,5 @@
 
-export function getFormatDate() {
-    const date = new Date()
+export function getFormatDate(date) {
     const year = date.getFullYear()
     const month = date.getMonth().toString().padStart(2, 0)
     const day = date.getDate().toString().padStart(2, 0)

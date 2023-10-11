@@ -58,7 +58,7 @@ const AddTaskPage = () => {
             </div>
             <form action="">
                 <div className="wrapper-input">
-                    <div className="label-input">Заголовок задачи</div>
+                    <div className="label-input required">Заголовок задачи</div>
                     <Input name="title" value={title} placeholder="Введите название задачи" type="text" onChange={(e) => setTitle(e.target.value)} className="input input-full-container"/>
                 </div>
                 <div className="wrapper-input">

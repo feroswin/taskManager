@@ -516,6 +516,17 @@ nav {
     color: green;
 }
 
+.required:after {
+    content: "*";
+    font-size: 16px;
+    color: #eb0c0c;
+}
+
+.wrapper-sort {
+    display: flex;
+    column-gap: 15px;
+}
+
 
 
 

@@ -321,6 +321,9 @@ nav {
 }
 
 .date-create {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
     font-size: 12px;
     font-weight: 600;
     color: #a1a1a1;
@@ -503,6 +506,14 @@ nav {
 
 .btn-submit-edit-task {
     margin-top: 20px;
+}
+
+.status-task {
+    color: red;
+}
+
+.status-task.success {
+    color: green;
 }
 
 

@@ -50,8 +50,7 @@ class TaskController {
                      message: "Заголовок не задан"
                  })
             const sql = "insert into task (id_user, title, description, created_at, deadline) values(?, ?, ?, ?, ?)"
-
-            const result = await connection.query(sql, [req.user.id_user, title, description, getFormatDate(new Date()), deadline])
+            const result = await connection.query(sql, [req.user.id_user, title, description, getFormatDate(new Date()), (deadline !== "") ? deadline : null])
             // console.log(result)
 
             return res.json({

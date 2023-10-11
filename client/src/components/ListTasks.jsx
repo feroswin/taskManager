@@ -12,9 +12,13 @@ const ListTasks = () => {
         })
     }, []);
 
+    function deleteTask (id) {
+        setTasks(tasks.filter((el) => el.id !== id))
+    }
+
     return (
         <div className="wrapper-tasks">
-            {tasks?.map((task, index) => <Task task={task} key={task.id}/>)}
+            {tasks?.map((task) => <Task task={task} key={task.id} onDelete={deleteTask}/>)}
         </div>
     );
 };

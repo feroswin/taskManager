@@ -11,8 +11,10 @@ const ListTasks = () => {
 
     useEffect(() => {
         instanceAxios.get("/tasks" ).then(({data}) => {
-            setTasks(data.data)
-            setCountExpiredTasks(data.count_expired)
+            if (data.data) {
+                setTasks(data.data)
+                setCountExpiredTasks(data.count_expired)
+            }
         })
     }, []);
 
@@ -22,15 +24,20 @@ const ListTasks = () => {
 
 
     function sortedTask() {
-        const sortedTasks = [...tasks]
-        sortedTasks.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-        setTasks(sortedTasks)
+        if (tasks.length) {
+            const sortedTasks = [...tasks]
+            sortedTasks.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            setTasks(sortedTasks)
+        }
+
     }
 
     function reversSortedTask() {
-        const sortedTasks = [...tasks]
-        sortedTasks.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
-        setTasks(sortedTasks)
+        if (tasks.length) {
+            const sortedTasks = [...tasks]
+            sortedTasks.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+            setTasks(sortedTasks)
+        }
     }
 
 

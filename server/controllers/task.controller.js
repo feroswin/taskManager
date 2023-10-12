@@ -17,7 +17,7 @@ class TaskController {
                 })
 
             const [dataExpiredDate] = await connection.query(`select count(*) as count_expired from task where date_format(deadline, "%Y-%m-%d") = date_add(date_format(now(), "%Y-%m-%d"), interval 1 day) and id_user = ? and is_complete = 0`, [id_user])
-            console.log(dataExpiredDate[0].count_expired)
+            // console.log(dataExpiredDate[0].count_expired)
             const formattedData = []
             for (let task of data) {
                 // console.log(task)
